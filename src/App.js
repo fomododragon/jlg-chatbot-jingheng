@@ -127,8 +127,18 @@ function App() {
       recognizer.stopContinuousRecognitionAsync();
     };
   }
+
+  const closeBrowser = () => {
+    window.open('', '_self', '');
+    window.close();
+    // 1. Go to address bar and type about:config
+    // 2. Go to parameter dom.allow_scripts_to_close_windows
+    // 3. Set its value as true
+  };
+
   return (
     <div className="h-screen w-screen bg-green-50">
+      <button className="closebrowserbtn" onClick={closeBrowser}>EXIT</button>
       <div className="block py-5">
         <h1 className="text-center  text-9xl font-black ">
           Jurong Lake Gardens

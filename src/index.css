@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.closebrowserbtn {
+    position:absolute;
+    right:10px;
+    top:10px;
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 20px 20px;
+    margin: 20px 20px;
+    opacity: 0.6;
+    transition: 0.3s;
+    font-size: 4em;
+    font-weight: bold;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .closebrowserbtn:hover {opacity: 1}
