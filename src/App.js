@@ -37,6 +37,7 @@ function App() {
     None: "I am sorry, but I could not understand your question.",
     GoRasauWalk: "You can go to Rasau Walk",
     IntroSelf: "Hello, I am here to guide you aroung Jurong Lake Gardens",
+    JLG_Map: "You may refer to the jurong lake garden map to get to your destination."
   };
 
   function speakDesiredIntent(desiredIntent) {
@@ -55,7 +56,7 @@ function App() {
 
   async function sttFromMic() {
     setUserIsSpeaking((userIsSpeaking) => true);
-    setStatusText((statusText) => "Rosy is listening");
+    setStatusText((statusText) => "I am listening");
     recognizer.recognizeOnceAsync((result) => {
       console.log(result);
       if (result.reason !== ResultReason.RecognizedSpeech) {
@@ -106,7 +107,7 @@ function App() {
           });
       } else if (e.result.reason === ResultReason.NoMatch) {
         setStatusText(
-          (statusText) => "Rosy could not pick up what you just said"
+          (statusText) => "I could not pick up what you just said"
         );
       }
     };
