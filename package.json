@@ -11,8 +11,10 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "microsoft-cognitiveservices-speech-sdk": "^1.17.0",
     "mongodb": "^3.6.9",
+    "of": "^1.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-final-form": "^6.5.3",
@@ -23,7 +25,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "BROWSER=none craco start",
+    "start": "cross-env BROWSER=none craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
