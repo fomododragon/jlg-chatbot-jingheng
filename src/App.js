@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import { ResultReason } from "microsoft-cognitiveservices-speech-sdk";
 import { useSpeechSynthesis } from "react-speech-kit";
+
 const axios = require("axios");
 const speechsdk = require("microsoft-cognitiveservices-speech-sdk");
 function App() {
@@ -36,12 +37,12 @@ function App() {
     GoPassionWave: "You can go to Passion Wave",
     None: "I am sorry, but I could not understand your question.",
     GoRasauWalk: "You can go to Rasau Walk",
-    IntroSelf: "Hello, I am here to guide you aroung Jurong Lake Gardens",
+    IntroSelf: "Hello, I am here to guide you around Jurong Lake Gardens",
     JLG_Map: "You may refer to the jurong lake garden map to get to your destination.",
     Fishing: "Fishing is only allowed in designated fishing areas in some of our parks, please look out for signboards if you are permitted.",
     Camping: "Camping in our parks is a recreational option for Singapore residents and is allowed in designated areas. Camping areas in our parks are in East Coast Park, Pasir ris park and West Coast Park camping areas, permits are required.",
     WearMask: "You are required to wear a mask except when engaging in strenuous exercise, such as running, cycling, brisk walking, and walking in hilly terrain. Please refer to our website at www.nparks.gov.sg/noticeboard for the latest advisories during the covid-19 situation.",
-    Cycling: "You are welcome to cycle along our park connectors or in parks with designated cycling tracks and trails. Please give way to pedestrains on footpath and shared paths.",
+    Cycling: "You are welcome to cycle along our park connectors, or in parks with designated cycling tracks and trails. Please give way to pedestrians on footpath and shared paths.",
     BookVenue: "In line with latest announcement by the Multi-Ministry TaskForce (MTF) for Phase Two, function spaces will be reopened for wedding solemnisations, subjected to a cap of 20 persons. We are unable to accomodate books for other events and activities until further notice. For more information on latest advisories in response to covid-19 situation, please visit our website at www.nparks.gov.sg/noticeboard."
   };
 
@@ -49,13 +50,16 @@ function App() {
     console.log(desiredIntent);
     if (desiredIntent !== "") {
       setIsSpeaking((isSpeaking) => true);
+
       speak({
         text: descriptions[desiredIntent],
         voices: voices[0],
         rate: 0.9,
         pitch: 1.0,
       });
+      speechSynthesis.cancel();
     }
+
     setIsSpeaking((isSpeaking) => false);
   }
 
