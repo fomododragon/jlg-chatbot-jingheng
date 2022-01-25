@@ -22,3 +22,7 @@
   }
 
   .closebrowserbtn:hover {opacity: 1}
+
+.text-center.text-6xl.font-semibold {
+  white-space: pre-line;
+}
